@@ -1,0 +1,18 @@
+{
+  "name": "commonjs-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "jest": "^21.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "author": "",
+  "license": "ISC"
+}
