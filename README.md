@@ -17,7 +17,7 @@ In this class we are going to cover a lot of advanced web development topics. Th
 This course has been organized and structured to spread across 10 weeks. With the exception of project weeks, each week will have around 3-4 lecture/lab units. The class schedule is Monday-Friday from 9am - 6pm. Lecture will take place from 9am - 12pm daily and co-working time is scheduled from 1pm - 5pm.  You are welcome to leave after co-working time or can stick around as there will likely be a TA, or support staff, available for another hour.
 
 # Lecture Code
-Each day of class will include a new directory created named after the class number, and the topics covered that day, _e.g._ `01-modular_patterns_and_testing`.  After each lecture the code demos from class will be placed in a `demo` directory, with a correlated naming convention to make things easy to locate.  There will also be a daily outline `README` that displays the high-level topics and objectives for that day.
+Each day of class will include a new directory created named after the class number, and the topics covered that day, _e.g._ `01-node-ecosystem`.  After each lecture the code demos from class will be placed in a `demo` directory, with a correlated naming convention to make things easy to locate.  There will also be a daily outline `README` that displays the high-level topics and objectives for that day.
 
 # Assignments
 All readings, homework, labs, and quizzes will be published, in Canvas, the week before they are assigned. All coding assignment instructions and materials will be organized into git repositories and will be published the day of the assignment.  Most assignments are due the same evening.
