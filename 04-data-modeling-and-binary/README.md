@@ -1,4 +1,4 @@
-![cf](http://i.imgur.com/7v5ASc8.png) 04: Event Emitters and Binary Data
+![cf](http://i.imgur.com/7v5ASc8.png) 04: Data Modeling and Binary Data
 =====================================
 
 ## Learning Objectives
@@ -7,19 +7,11 @@
 * Students will be able to use EventEmitters for managing asyncronous code
 
 ## Resources
-* Skim [events api docs]
-* Read [bitmap file format]
 * Read  [node buffer api docs]
 * Watch [endian and little endian]
 
-## EventEmitter
-* much of the node.js architecture is built around the use of events
-* all objects that emit events in node.js are instances of the EventEmitter constructor
-* EventEmitter's are a great way to handle controlling asynchronous events
-* functions can be registered as listeners for an event on instances of the EventEmitter class
-* instances of EventEmitters can emit events and pass the listeners data
-* EventEmitters *do not* throw errors if events are emitted - they have no listeners to handle them
-  * this can be a very powerful feature and is often used to implement "hooks" and "observables" in many libraries
+## Javascript Data Modeling
+Javascript has a limited number of built in data types including objects, arrays, strings, numbers, and booleans. Data modeling in Javscript is the process of taking a real world or conceptual idea and encoding it into Javascript's built in data-types. There isn't technicaly a right or wrong way to model data in software development, because it has been proven that any idea can be represented using any data structure. However it is important to follow several practices to boost software readbility and maintainability. Booleans should be used when the data can have only two states. Numbers should be used when the data could support arithmatic opperaions. Strings should be used when the data is representing natrual language. Arrays should be used to bundle multiple pieces of like data. Objects should be used to bundle multiple pieces of different data. 
 
 ## Binary
 You probably know that everything in the computer is stored in 0s and 1s. As web developers we don't often have to work with data at such a low level, instead we usualy get to work with Strings, Numbers, Arrays, Objects, and so on. Though most of the time we are lucky enough to work with such abstracted data types, sometimes we are required to undestand how data is stored in binary. There are predefined specifications for how to decode number and strings from binary. The majority of the data we work with is made up of numbers and strings. For example Numbers and Strings are used to make more compex things like JSON, XML, HTML, JPEG, GIF, MP3, MP4, and even Javascript. Undersanding how to manipulate binary data on a more fundamental leval, can open up doors for having much more control over the data in our applications.
@@ -102,6 +94,7 @@ Signed |Unsigned
 -2     |14       |1110   (8 + 6) * -1
 -1     |15       |1111   (8 + 7) * -1
 ```
+
 ###### Hex Cheat Sheet
 ``` text
 DEC |HEX |BIN
@@ -123,11 +116,6 @@ DEC |HEX |BIN
 14  |e   |1110   
 15  |f   |1111   
 ```
-* to convert to text there is an encoding called **ascii** - this maps all characters to a corresponding number
-* run the command `man ascii` in your command line to see an ascii chart
-* modern computing provides us with a character encoding called `utf8` - this is an extension for ascii, that supports multiple languages
-
-
 
 <!--links -->
 [events api docs]: https://nodejs.org/api/events.html
