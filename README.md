@@ -2,9 +2,9 @@
 =====================================
 > Advanced Software Development  
 
-[![](https://img.shields.io/badge/canvas-401d20-blue.svg)](https://canvas.instructure.com/courses/1204544)
+[![](https://img.shields.io/badge/canvas-401d20-blue.svg)](https://canvas.instructure.com/courses/1214419)
 [![](https://img.shields.io/badge/labs-401d20-yellow.svg)](https://github.com/codefellows-seattle-javascript-401d20)
-[![](https://img.shields.io/badge/slack-401d20-orange.svg)](https://codefellows.slack.com/messages/C5LUFA02F/)
+[![](https://img.shields.io/badge/slack-401d20-orange.svg)](https://codefellows.slack.com/messages/C70NABNJD/)
 
 # Welcome
 
