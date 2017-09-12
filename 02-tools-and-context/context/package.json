@@ -1,0 +1,18 @@
+{
+  "name": "context",
+  "version": "1.0.0",
+  "description": "adlfkjasfd laksdjf lakfdj lakj",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --coverage -i",
+    "test-watch": "jest --watch -i"
+  },
+  "keywords": [],
+  "author": "slugbyte@slugbyte.com",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "jest": "^21.0.2"
+  }
+}
