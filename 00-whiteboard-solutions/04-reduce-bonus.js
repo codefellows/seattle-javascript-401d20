@@ -1,3 +1,7 @@
+// reduce with optional initalState
+// reduce(callback, collection) 
+// reduceBonus(callback, initialState, collection)
+
 let reduceBonus = (...args) => {
   let collection = args.splice(-1)[0]
   let [callback, initialState ] = args
