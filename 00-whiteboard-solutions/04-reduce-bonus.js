@@ -1,3 +1,7 @@
+// Define a function "reduce" that has the function signature (callback, [initalState,] collection) => Array
+// Itterie first functions (callback first) are the functional programing way of working 
+// with data. It makes the useage of the functions much more readable.
+//
 // reduce with optional initalState
 // reduce(callback, collection) 
 // reduceBonus(callback, initialState, collection)
