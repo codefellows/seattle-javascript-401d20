@@ -4,12 +4,18 @@
 process.env.PORT = 7000
 process.env.STORAGE_PATH = `${__dirname}/test-storage.json`
 
-const server = require('../lib/server.js')
+const fs = require('fs-extra')
 const superagent = require('superagent')
+const server = require('../lib/server.js')
 
 describe('/api/notes', ()=> {
   afterAll(server.stop)
   beforeAll(server.start)
+
+  // this is a way you can clean up your test storage file 
+  // after every test so that each time your tests runs
+  // it has a clean storage file to work with
+  afterAll(() => fs.remove(process.env.STORAGE_PATH))
 
   describe('POST /api/notes', () => {
     test('should respond with a 200', () => {
