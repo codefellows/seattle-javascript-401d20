@@ -2,7 +2,7 @@
 
 // mock env 
 process.env.PORT = 7000
-process.env.STORAGE_PATH = `${__dirname}/../storage.json`
+process.env.STORAGE_PATH = `${__dirname}/test-storage.json`
 
 const server = require('../lib/server.js')
 const superagent = require('superagent')
