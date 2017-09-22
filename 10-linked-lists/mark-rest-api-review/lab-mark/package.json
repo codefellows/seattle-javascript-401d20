@@ -1,0 +1,31 @@
+{
+  "name": "lab-mark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --coverage -i",
+    "watch": "nodemon index.js",
+    "start": "node index.js",
+    "test-watch": "jest --watch -i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.7.1",
+    "jest": "^21.1.0",
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "faker": "^4.1.0",
+    "fs-extra": "^4.0.2",
+    "superagent": "^3.6.0",
+    "uuid": "^3.1.0"
+  }
+}
