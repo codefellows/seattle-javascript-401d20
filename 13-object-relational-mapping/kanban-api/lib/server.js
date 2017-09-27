@@ -7,7 +7,6 @@ const mongoose = require('mongoose')
 
 // connect to the database
 mongoose.Promise = Promise
-mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true})
 
 const app = express()
 let isOn = false
@@ -36,6 +35,9 @@ module.exports = {
         resolve()
       })
     })
+    .then(() => {
+      return mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true})
+    })
   },
   stop: () => {
     return new Promise((resolve, reject) => {
@@ -50,6 +52,7 @@ module.exports = {
         resolve()
       })
     })
+    .then(() => mongoose.disconnect())
   },
 }
 
