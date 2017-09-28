@@ -29,6 +29,7 @@ describe('/api/notes', () => {
         title: faker.lorem.words(10),
         content: faker.lorem.words(100),
       }
+
       return superagent.post(`${apiURL}/api/notes`)
       .send(tempNote)
       .then(res => {
@@ -60,6 +61,7 @@ describe('/api/notes', () => {
       return noteMockCreate()
       .then(note => {
         tempNote = note
+        console.log(`${apiURL}/api/notes/${note._id}`);
         return superagent.get(`${apiURL}/api/notes/${note._id}`)
       })
       .then(res => {
@@ -79,4 +81,5 @@ describe('/api/notes', () => {
       })
     })
   })
+
 })
