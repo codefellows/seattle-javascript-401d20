@@ -70,12 +70,12 @@ Some databases (including mongodb) do not nativly support models having many to 
 User 
   id: 1234
   username: 'teapot'
-  friends: [ 1001 3333 4321 ]
+  organisations: [ 1001 3333 4321 ]
 
-User 
+Organization 
   id: 1001
-  username: 'peach'
-  friends: [ 1234 5000 ]
+  username: 'codefellows'
+  users: [ 1234 5000 ]
 ```
 
 ###### Using A Second Model
@@ -83,18 +83,15 @@ User
 User 
   id: 1234
   username: 'teapot'
-  friendsID: 33
+  membership: 33
 
-User 
+Orginazation 
   id: 1001
-  username: 'peach'
-  freindsID: 77
+  username: 'codefellows'
+  membership: 33
   
-Freinds
+Membership
   id: 33
-  users: [ 1001 3333 4321]
-
-Freinds
-  id: 77
-  users: [ 1234 5000 ]
+  user: 1234
+  organization: 1001
 ```
