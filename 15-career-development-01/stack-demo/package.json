@@ -1,0 +1,16 @@
+{
+  "name": "stack-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jest": "^21.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest -i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

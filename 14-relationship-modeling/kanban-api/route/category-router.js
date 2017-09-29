@@ -10,7 +10,6 @@ const categoryRouter = module.exports = new Router()
 categoryRouter.post('/categories', jsonParser, (req, res, next) => {
   if(!req.body.title)
     return next(httpErrors(400, 'Category model requires a title'))
-
   new Category(req.body).save()
   .then(category => res.json(category))
   .catch(next)
