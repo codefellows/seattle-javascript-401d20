@@ -1,0 +1,111 @@
+/* reset */
+
+* {
+  position: static;
+  display: block;
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  font-weight: normal;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+head, script, link {
+  display: none;
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  width: 980px;
+  margin: 0 auto;
+}
+
+/* debugger */
+* {
+  outline: 1px dotted blue;
+}
+
+.container {
+  float: left;
+}
+
+.header {
+  height: 10%;
+  background: yellow;
+}
+
+.main {
+  height: 80%;
+  width: 50%;
+  background: cyan;
+}
+
+.article {
+  position: relative;
+  height: 40%;
+  width: 50%;
+  background: orange;
+}
+
+.ad {
+  position: absolute;
+  top: 50%;
+  left:  50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 50%;
+  background: black;
+}
+
+.list, .preview {
+  width: 25%;
+  height: 40%;
+}
+
+.list {
+  background: magenta;
+}
+
+.preview {
+  background: green;
+}
+
+.footer {
+  height: 10%;
+  background: red;
+}
+
+
+.collection {
+  overflow: scroll;
+}
+
+.collection .item {
+  width: calc(100% / 3 - 0.5em);
+  margin: 0.25em;
+  height: 100px;
+  float: left;
+  background: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
