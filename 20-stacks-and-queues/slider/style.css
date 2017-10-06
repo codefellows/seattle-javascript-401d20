@@ -1,0 +1,78 @@
+/* reset */
+*  {
+  position: static;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 1em;
+  font-weight: normal;
+  font-family: sans-serif;
+}
+
+/* base */
+
+head, script, link {
+  display: none;
+}
+
+body, html {
+  position: relative;
+}
+
+/* modules */
+.slider * {
+  transition: 200ms;
+}
+
+.slider input {
+  display: none;
+}
+
+.slider input[type="checkbox"]:checked + label {
+  background: green;
+}
+
+.slider input[type="checkbox"]:checked + label .toggle {
+  transform: translateX(3em);
+}
+
+
+.slider label {
+  width: 5em;
+  height: 2em;
+  padding: 0.25em;
+  background: red;
+  border-radius: 1em;
+}
+
+.slider label .toggle {
+ width: 1.5em;
+ height: 1.5em;
+ background: white;
+ border-radius: 0.75em;
+}
+
+/*.slider label .toggle::before {*/
+  /*width: 1.5em;*/
+  /*height: 1.5em;*/
+  /*padding: 0.25em;*/
+  /*text-align: center;*/
+  /*content: 'off';*/
+/*}*/
+
+/*.slider input[type="checkbox"]:checked + label .toggle::before {*/
+  /*width: 1.5em;*/
+  /*height: 1.5em;*/
+  /*content: 'on';*/
+/*}*/
+
+.slider {
+  transform: skew(10deg);
+}
+
+
