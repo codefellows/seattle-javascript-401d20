@@ -10,7 +10,7 @@
 * Setup travis-ci continuous integration and heroku continuous deployment
 * Write the auth layer of your application
 
-#Day two milestone objectives
+# Day two milestone objectives
 * Build your two MVP models with routes and 90% code coverage
 * If you achieve 90% code coverage for routes of a model start on a streach model
 
@@ -18,7 +18,7 @@
 * Build your two stretch models with routes and 90% code coverage
 * If you achieve 90% code coverage for routes of a model start on another streach model
 
-#Day four milestone objectives
+# Day four milestone objectives
 * Finsh any loose ends
 * Write doumentation for all features of your application
 * Pratice your presintation
