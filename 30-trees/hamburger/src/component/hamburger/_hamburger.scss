@@ -1,0 +1,23 @@
+.hamburger {
+  height: 100%;
+  width: 250px;
+  outline: 1px dotted blue;
+  transition: transform 200ms;
+  transform: translateX(-200px);
+  &.open { transform: translateX(0px); }
+
+  button, main {
+    float: left;
+  }
+
+  main {
+    width: 200px;
+    height: 100%;
+    background: red;
+  }
+
+  button {
+    width: 50px;
+  }
+}
+
