@@ -1,0 +1,66 @@
+@import 'vars';
+
+@keyframes shake {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+
+
+  10%, 90% {
+    transform: translate3d(1px, -1px, -1px); 
+  }
+
+  75% {
+    transform: translate3d(-1px, 1px, 1px);
+  }
+}
+
+.section {
+  border: 2px solid #abc;
+  padding: $pad;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  h2, .delete {
+    float: left;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    height: 50px;
+    width: 90%;
+    padding: $pad;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: $color-black;
+    color: $color-white;
+    margin-bottom: $pad;
+  }
+
+  .delete {
+    height: 50px;
+    width: 10%; 
+    top: $pad / 2;
+    right: $pad / 2;
+    padding: $pad / 2;
+    background: $color-pink;
+    color: $color-white;
+    transition: transform 200ms, background 200ms;
+
+    &:hover { 
+      background: $color-pink * 0.8; 
+      span {
+        display: block;
+        animation-name: shake;
+        animation-duration: 250ms;
+      }
+    }
+
+    &:active { 
+      background: $color-pink * 0.5; 
+      background: $color-pink * 0.8; 
+    }
+  }
+
+  
+}
