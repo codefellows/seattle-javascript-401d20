@@ -1,3 +1,4 @@
+import './_card.scss'
 import React from 'react'
 import {connect} from 'react-redux'
 import CardForm from '../card-form'
@@ -12,10 +13,13 @@ class Card extends React.Component {
     } = this.props
 
     return (
-      <div className='card'>
-        <p> {card.content} </p>
-        <button onClick={() => cardRemove(card)}> delete </button>
-        <CardForm card={card} onComplete={cardUpdate} />
+      <div draggable className='card'>
+        <button className='delete' onClick={() => cardRemove(card)}> <span> delete </span> </button>
+
+        <main>
+          <p> {card.content} </p>
+          <CardForm card={card} onComplete={cardUpdate} />
+        </main>
       </div>
     )
   }

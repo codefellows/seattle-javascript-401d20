@@ -1,3 +1,4 @@
+import './_card-form.scss'
 import React from 'react'
 
 // forms that represent resoruces 
@@ -64,7 +65,7 @@ class CardForm extends React.Component {
         onSubmit={this.handleSubmit}
         >
 
-        <input 
+        <textarea
           type='text'
           name='content'
           placeholder='content'

@@ -6,11 +6,17 @@ import SectionForm from '../section-form'
 import * as section from '../../action/section.js'
 
 class Landing extends React.Component {
+  componentWillMount(){
+    this.props.sectionCreate({title: 'ready'})
+    this.props.sectionCreate({title: 'in progress'})
+    this.props.sectionCreate({title: 'done'})
+  }
   render(){
     let {
       sections,
       sectionCreate,
     } = this.props
+
 
     return (
       <div className='landing'>

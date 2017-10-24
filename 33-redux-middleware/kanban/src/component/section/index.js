@@ -1,4 +1,5 @@
 import './_section.scss'
+import faker from 'faker'
 import React from 'react'
 import {connect} from 'react-redux'
 import Card from '../card'
@@ -8,6 +9,13 @@ import * as card from '../../action/card.js'
 import * as section from '../../action/section.js'
 
 class Section extends React.Component {
+  componentWillMount(){
+    this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
+    this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
+    this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
+    this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
+  }
+
   render(){
     let {
       cards,
@@ -26,9 +34,11 @@ class Section extends React.Component {
         <SectionForm section={section} onComplete={sectionUpdate} />
         <CardForm section={section} onComplete={cardCreate} />
 
-        {sectionCards.map((card, i) => 
-          <Card card={card} key={i} />
-        )}
+        <main className='card-container'>
+          {sectionCards.map((card, i) => 
+            <Card card={card} key={i} />
+          )}
+        </main>
       </div>
     )
   }

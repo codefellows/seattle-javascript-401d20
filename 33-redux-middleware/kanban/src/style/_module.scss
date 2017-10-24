@@ -55,6 +55,7 @@
     color: $color-white;
 
     &:hover { background-color: $color-blue * 0.8; }
+    &:focus { background-color: $color-blue * 0.8; }
     &:active { background-color: $color-blue* 0.5; }
   }
 
