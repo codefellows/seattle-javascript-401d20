@@ -1,4 +1,4 @@
-export default create = ({content, sectionID}) => ({
+export const create = ({content, sectionID}) => ({
   type: 'CARD_CREATE',
   payload: {
     content, 
@@ -7,12 +7,12 @@ export default create = ({content, sectionID}) => ({
   }
 })
 
-export default update = (card) => ({
+export const update = (card) => ({
   type: 'CARD_UPDATE', 
   payload: card,
 })
 
-export default remove = (card) => ({
+export const remove = (card) => ({
   type: 'CARD_REMOVE', 
   payload: card,
 })
