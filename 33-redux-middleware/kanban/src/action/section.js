@@ -1,11 +1,13 @@
-export const create = ({title}) => ({
-  type: 'SECTION_CREATE',
-  payload: {
-    title,
-    id: btoa(Math.random()),
-    created: new Date(),
-  },
-})
+export const create = ({title}) => {
+  return {
+    type: 'SECTION_CREATE',
+    payload: {
+      title,
+      id: btoa(Math.random()),
+      created: new Date(),
+    },
+  }
+}
 
 export const update = (section) => ({
   type: 'SECTION_UPDATE',

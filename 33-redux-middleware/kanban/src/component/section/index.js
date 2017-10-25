@@ -7,8 +7,22 @@ import CardForm from '../card-form'
 import SectionForm from '../section-form'
 import * as card from '../../action/card.js'
 import * as section from '../../action/section.js'
+import * as util from '../../lib/util.js'
 
+// has editing view state
 class Section extends React.Component {
+
+  constructor(props){
+    super(props)
+    this.state = {editing: false}
+    this.handleUpdate = this.handleUpdate.bind(this)
+  }
+
+  handleUpdate(section){
+    this.props.sectionUpdate(section)
+    this.setState({editing: false})
+  }
+
   componentWillMount(){
     this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
     this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
@@ -25,13 +39,23 @@ class Section extends React.Component {
       sectionRemove,
     } = this.props
 
+    let {editing} = this.state
     let sectionCards = cards[section.id]
 
     return (
       <div className='section'>
-        <h2> {section.title} </h2>
-        <button className='delete' onClick={() => sectionRemove(section)}> <span> X </span> </button>
-        <SectionForm section={section} onComplete={sectionUpdate} />
+        {util.renderIf(!editing, 
+          <div>
+            <h2 onDoubleClick={() => this.setState({editing: true})}> {section.title} </h2>
+            <button className='delete' 
+              onClick={() => sectionRemove(section)}> <span> X </span> 
+            </button>
+          </div>
+        )}
+
+        {util.renderIf(editing, 
+          <SectionForm section={section} onComplete={this.handleUpdate} />)}
+
         <CardForm section={section} onComplete={cardCreate} />
 
         <main className='card-container'>

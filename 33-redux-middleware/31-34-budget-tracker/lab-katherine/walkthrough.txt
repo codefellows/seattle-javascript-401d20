@@ -1,0 +1,37 @@
+two resource app
+  category
+    id
+    title
+    ammount
+    timestamp
+  expense 
+    id
+    name
+    price
+    timestamp
+    categoryID
+
+react/redux
+
+* where is the app state? 
+a redux store 
+* how react access the state -> through the provider
+
+* how will the app state be represened? 
+{
+  categories: [],
+  expsens: {
+    categoryID: [],
+    categoryID: [],
+    categoryID: [],
+    categoryID: [],
+  }
+}
+
+* how many reducers are we going to have?
+  3 (categories, expenses, and index)
+
+* what type of operations do we support for the modes
+  FULL CRUD for eacht model
+
+
