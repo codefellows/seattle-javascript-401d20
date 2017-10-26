@@ -20,6 +20,9 @@ export default (state=emptyState, {type, payload}) => {
       let card = payload.card
       // remove card rom current section
       let oldSectionID = card.sectionID
+      // avoid duplacates
+      if(oldSectionID == payload.sectionID)
+        return state
       let oldSection = state[card.sectionID].filter(item => item.id !== card.id)
       // add card to future secction
       card.sectionID = payload.sectionID
