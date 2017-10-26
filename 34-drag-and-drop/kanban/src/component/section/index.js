@@ -8,10 +8,10 @@ import SectionForm from '../section-form'
 import * as card from '../../action/card.js'
 import * as section from '../../action/section.js'
 import * as util from '../../lib/util.js'
+import DropZone from '../drop-zone'
 
 // has editing view state
 class Section extends React.Component {
-
   constructor(props){
     super(props)
     this.state = {editing: false}
@@ -24,10 +24,8 @@ class Section extends React.Component {
   }
 
   componentWillMount(){
-    //this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
-    //this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
-    //this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
-    //this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
+    this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
+    this.props.cardCreate({content: faker.lorem.words(10) , sectionID: this.props.section.id})
   }
 
   render(){
@@ -35,12 +33,16 @@ class Section extends React.Component {
       cards,
       section,
       cardCreate,
+      cardUpdateSection,
       sectionUpdate,
       sectionRemove,
     } = this.props
 
     let {editing} = this.state
-    let sectionCards = cards[section.id]
+    let sectionCards = cards[section.id] 
+    console.log({cards})
+    console.log(sectionCards)
+
 
     return (
       <div className='section'>
@@ -58,11 +60,13 @@ class Section extends React.Component {
 
         <CardForm section={section} onComplete={cardCreate} />
 
-        <main className='card-container'>
-          {sectionCards.map((card, i) => 
-            <Card card={card} key={i} />
-          )}
-        </main>
+        <DropZone onComplete={(card) => cardUpdateSection(card, section.id)}>
+          <main className='card-container'>
+            {sectionCards.map((card, i) => 
+              <Card card={card} key={i} />
+            )}
+          </main>
+        </DropZone>
       </div>
     )
   }
@@ -74,6 +78,7 @@ let mapStateToProps = (state) => ({
 
 let mapDispatchToProps = (dispatch) => ({
   cardCreate: (data) => dispatch(card.create(data)),
+  cardUpdateSection: (data, sectionID) => dispatch(card.updateSectionID(data, sectionID)),
   sectionUpdate: (data) => dispatch(section.update(data)),
   sectionRemove: (data) => dispatch(section.remove(data)),
 })

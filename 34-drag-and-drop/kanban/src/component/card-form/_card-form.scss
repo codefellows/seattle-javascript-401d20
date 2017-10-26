@@ -1,0 +1,15 @@
+@import 'vars';
+@import 'module';
+
+.card-form {
+  @include normalize;
+  margin: $pad 0;
+  border: 1px solid $color-blue;
+
+  textarea { 
+    padding: $pad;
+    resize: none;
+    margin-bottom: $pad; 
+    height: 5em;
+  }
+}

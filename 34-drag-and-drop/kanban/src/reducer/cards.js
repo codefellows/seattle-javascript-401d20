@@ -1,8 +1,8 @@
 let emptyState = {}
 
-try {
-  emptyState = JSON.parse(localStorage.cards) || {}
-} catch (err) {}
+//try {
+  //emptyState = JSON.parse(localStorage.cards) || {}
+//} catch (err) {}
 
 // (prevState, action) => newState
 export default (state=emptyState, {type, payload}) => {
@@ -16,6 +16,19 @@ export default (state=emptyState, {type, payload}) => {
       // payload is a section
       // delete the array with the sections cards
      return { ...state, [payload.id]: undefined }
+    case 'CARD_UPDATE_SECTION_ID':
+      let card = payload.card
+      // remove card rom current section
+      let oldSectionID = card.sectionID
+      let oldSection = state[card.sectionID].filter(item => item.id !== card.id)
+      // add card to future secction
+      card.sectionID = payload.sectionID
+      let newSection = [card, ...state[payload.sectionID]]
+      return {
+        ...state,
+        [oldSectionID]: oldSection,
+        [card.sectionID]: newSection,
+      }
     case 'CARD_CREATE':
       /// payload is a card
       sectionID = payload.sectionID

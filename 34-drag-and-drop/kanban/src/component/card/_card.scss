@@ -1,0 +1,27 @@
+@import 'vars';
+
+.card {
+
+  .edit, .delete {
+    float: left;
+    width: 25%;
+    height: 2em;
+  }
+
+  main {
+    float: left;
+    padding: $pad;
+    margin-bottom: $pad;
+    background: $color-pink;
+  }
+
+  p {
+    display: block;
+    padding-top: 1.5em;
+  }
+
+  .card-form, textarea {
+    border: none !important;
+  }
+
+}

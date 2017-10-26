@@ -1,11 +1,10 @@
 
 var emptyState = []
 
-try {
-  emptyState = JSON.parse(localStorage.sections) || []
-} catch (error){}
+//try {
+  //emptyState = JSON.parse(localStorage.sections) || []
+//} catch (error){}
 
-console.log({emptyState})
 
 export const validateSection = (section) => {
   if(!section.title)

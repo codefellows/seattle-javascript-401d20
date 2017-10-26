@@ -1,0 +1,67 @@
+@import 'vars';
+
+@mixin normalize {
+  h1, h2, h3, h4 {
+    margin: 1.414em 0 0.5em;
+    font-weight: inherit;
+    line-height: 1.2;
+    color: $color-black;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: 2.074em;
+  }
+
+  h2 {font-size: 1.728em;}
+  h3 {font-size: 1.44em;}
+  h4 {font-size: 1.2em;}
+
+  p {
+    color: $color-darkgrey;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  a {
+    text-decoration: underline;
+    font-family: sans-serif;
+    color: $color-blue;
+
+    &:hover { color: $color-blue * 0.8; }
+    &:active { color: $color-blue * 0.5; }
+    &:visited { color:  $color-pink * 0.8; }
+  }
+
+  pre {
+    padding-left: $pad * 2;
+    font-family: $font-mono;
+  }
+
+  ul {
+    margin-left: $pad;
+    padding-left: $pad;
+  }
+
+  button {
+    padding: $pad;
+    background-color: $color-blue;
+    color: $color-white;
+
+    &:hover { background-color: $color-blue * 0.8; }
+    &:focus { background-color: $color-blue * 0.8; }
+    &:active { background-color: $color-blue* 0.5; }
+  }
+
+    input {
+      padding: $pad;
+      outline: 1px solid #abc;
+      &:focus { outline: 1px solid $color-blue; }
+    }
+}

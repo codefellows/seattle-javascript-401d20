@@ -1,0 +1,7 @@
+@import 'module';
+
+.section-form {
+  @include normalize;
+
+  input { margin-bottom: $pad; }
+}
