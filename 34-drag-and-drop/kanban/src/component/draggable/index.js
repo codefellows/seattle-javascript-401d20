@@ -13,7 +13,7 @@ class Draggable extends React.Component {
   
   handleDragStart(e){
     e.dataTransfer.setData('application/json', JSON.stringify(this.props.data))
-    e.dataTransfer.setDragImage(image, 200, 200)
+    e.dataTransfer.setDragImage(image, 50, 50)
     
   }
 

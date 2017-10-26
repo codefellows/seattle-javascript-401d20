@@ -46,21 +46,21 @@ class Section extends React.Component {
 
     return (
       <div className='section'>
-        {util.renderIf(!editing, 
-          <div>
-            <h2 onDoubleClick={() => this.setState({editing: true})}> {section.title} </h2>
-            <button className='delete' 
-              onClick={() => sectionRemove(section)}> <span> X </span> 
-            </button>
-          </div>
-        )}
-
-        {util.renderIf(editing, 
-          <SectionForm section={section} onComplete={this.handleUpdate} />)}
-
-        <CardForm section={section} onComplete={cardCreate} />
-
         <DropZone onComplete={(card) => cardUpdateSection(card, section.id)}>
+          {util.renderIf(!editing, 
+            <div>
+              <h2 onDoubleClick={() => this.setState({editing: true})}> {section.title} </h2>
+              <button className='delete' 
+                onClick={() => sectionRemove(section)}> <span> X </span> 
+              </button>
+            </div>
+          )}
+
+          {util.renderIf(editing, 
+            <SectionForm section={section} onComplete={this.handleUpdate} />)}
+
+          <CardForm section={section} onComplete={cardCreate} />
+
           <main className='card-container'>
             {sectionCards.map((card, i) => 
               <Card card={card} key={i} />
