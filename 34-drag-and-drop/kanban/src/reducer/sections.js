@@ -5,7 +5,6 @@ var emptyState = []
   //emptyState = JSON.parse(localStorage.sections) || []
 //} catch (error){}
 
-
 export const validateSection = (section) => {
   if(!section.title)
     throw new Error('section expected a title')

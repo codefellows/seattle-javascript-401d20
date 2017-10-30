@@ -1,15 +1,33 @@
 @import 'vars';
 
 .card {
+  position: relative;
 
-  .edit, .delete {
+  .delete {
+    display: none;
+    position: absolute;
+    top: -2em;
+    right: 0;
     float: left;
     width: 25%;
     height: 2em;
+    background: red;
+    
+    &:hover {
+      display: block;
+    }
+  }
+
+  &:hover {
+    p {
+    }
+
+    .delete {
+      display: block;
+    }
   }
 
   main {
-    float: left;
     padding: $pad;
     margin-bottom: $pad;
     background: $color-pink;
@@ -17,7 +35,6 @@
 
   p {
     display: block;
-    padding-top: 1.5em;
   }
 
   .card-form, textarea {

@@ -1,0 +1,25 @@
+@import 'vars';
+
+* {
+  position: static;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  font-family: $font-main;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+input, textarea {
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
