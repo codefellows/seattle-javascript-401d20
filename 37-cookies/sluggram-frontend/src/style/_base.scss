@@ -1,0 +1,9 @@
+html {
+  position: relative;
+  head,link,script { display: none; }
+  body { 
+    position: relative; 
+    //background: url('../asset/icon/yaw.png');
+  }
+  span, em, strong, i { display: inline } 
+}
