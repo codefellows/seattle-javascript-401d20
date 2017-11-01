@@ -4,12 +4,15 @@ import * as util from '../../lib/util.js'
 let isBooleanType = (type) => type === 'checkbox' || type === 'radio'
 let isInput = (type) => type === 'input' || type == 'select' || type == 'textarea'
 
+
+// TODO: run the validators in the submit function
+// TODO: required should be a higher order validator function
+
 class Form extends React.Component  {
   constructor(props){
     super(props)
-    this.state = {
-      submitted: false,
-    }
+
+    this.state = { submitted: false}
     this.inputNames = []
 
     // setup inital state
@@ -98,7 +101,7 @@ class Form extends React.Component  {
 
       return (
         <div className={className} key={i}>
-          { util.renderIf(this.state[name + 'Error'],
+          { util.renderIf(this.state[name + 'Error'] && this.state[name + 'Dirty'],
               <p className='tooltip'> {this.state[name+'Error']} </p>
           )}
 

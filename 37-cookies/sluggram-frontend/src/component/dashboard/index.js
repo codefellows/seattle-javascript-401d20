@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from '../form-create'
+import SmartForm from '../smart-form'
 
 let handleValidate = ({name, value}) => {
   switch(name){
@@ -17,7 +17,7 @@ class Dashboard extends React.Component {
     return (
       <div className='dashboard'>
         <h1> hello from Dashboard </h1>
-        <Form 
+        <SmartForm 
           data={{who: 'l'}} 
           onComplete={console.log} 
           onValidate={handleValidate}>
@@ -47,7 +47,7 @@ class Dashboard extends React.Component {
             <option> cool </option>
           </select>
           <button type='submit'> booyea </button>
-        </Form>
+        </SmartForm>
       </div>
     )
   }
