@@ -1,0 +1,23 @@
+@import 'vars';
+
+* {
+  position: static;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-primary;
+  color: $color-black;
+  font-size: 1em;
+  font-weight: normal;
+  text-decoration: none;
+  border: none; 
+  outline: none;
+}
+
+form *:focus {
+  border: none; 
+  outline: none;
+}

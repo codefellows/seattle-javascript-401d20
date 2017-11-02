@@ -1,0 +1,9 @@
+@import 'vars';
+
+@mixin retroify($A: $color-black, $B: $color-primary){
+  border-top: 2px solid $A;
+  border-bottom: 2px solid $B;
+  border-left: 2px solid $A;
+  border-right: 2px solid $B;
+  box-shadow: 4px 4px $color-lightgrey;
+}

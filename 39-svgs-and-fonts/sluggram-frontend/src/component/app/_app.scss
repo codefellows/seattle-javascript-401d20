@@ -1,0 +1,25 @@
+@import 'vars';
+@import 'mixins';
+
+.app {
+  padding: $pad;
+
+  .header {
+    @include retroify(blue, green);
+
+    height: 50px;
+  }
+
+  form {
+    @include retroify;
+    padding: 2 * $pad;
+  }
+
+}
+
+@media screen and (min-width: 960px){
+  .app {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
