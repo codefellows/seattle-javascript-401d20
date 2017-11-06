@@ -1,4 +1,4 @@
-import User from '../model/user.js'
+import Account from '../model/account.js'
 import createError from 'http-errors'
 
 export default (req, res, next) => {
@@ -15,7 +15,7 @@ export default (req, res, next) => {
   if(!username || !password)
     return next(createError(401, 'AUTH ERROR: username or password missing'))
 
-  User.findOne({username})
+  Account.findOne({username})
   .then(user => {
     if(!user)
       throw createError(401, 'AUTH ERROR: user not found')

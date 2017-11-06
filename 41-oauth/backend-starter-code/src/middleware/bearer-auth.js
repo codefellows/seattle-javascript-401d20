@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken'
-import User from '../model/user.js'
+import Account from '../model/account.js'
 import createError from 'http-errors'
 import promisify  from '../lib/promisify.js'
 
@@ -13,7 +13,7 @@ export default (req, res, next) => {
     return next(createError(400, 'AUTH ERROR: not bearer auth'))
 
   promisify(jwt.verify)(token, process.env.SECRET)
-  .then(({randomHash}) => User.findOne({randomHash}))
+  .then(({randomHash}) => Account.findOne({randomHash}))
   .then((user) => {
     if(!user)
       throw createError(401, 'AUTH ERROR: user not found')
