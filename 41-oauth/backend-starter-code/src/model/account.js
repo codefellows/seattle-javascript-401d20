@@ -5,7 +5,7 @@ import * as bcrypt from 'bcrypt'
 import {randomBytes} from 'crypto'
 import * as jwt from 'jsonwebtoken'
 import createError from 'http-errors'
-import {promisify} from '../lib/promisify.js'
+import {promisify} from '../lib/promisify.js' 
 import Mongoose, {Schema} from 'mongoose'
 
 // SCHEMA
@@ -13,6 +13,7 @@ const accountSchema =  new Schema({
   email: {type: String, required: true, unique: true},
   username: {type: String, required: true, unique: true},
   passwordHash: {type: String, required: true},
+  googleOAuth: {type: Boolean, default: false},
   tokenSeed: {type: String,  unique: true, default: ''},
 })
 
@@ -53,6 +54,29 @@ Account.createFromSignup = function (user) {
   .then(passwordHash => {
     let data = Object.assign({}, user, {passwordHash}) 
     return new Account(data).save()
+  })
+}
+
+// 
+Account.handleGoogleOAuth = function(openIDProfile){
+  //find or create an account
+  return Account.findOne({email: openIDProfile.email})
+  .then(account => {
+    if (account) {
+      // check that the account has googleOAuth true
+      if(account.googleOAuth)
+        return account
+      throw new Error('account found but not connected to google')
+    }
+    // create an account based on the email
+    return new Account({
+      username: openIDProfile.email.split('@')[0],
+      email: openIDProfile.email,
+      passwordHash: randomBytes(32).toString('hex'), // invalid password that no1 knows
+      tokenSeed: randomBytes(32).toString('hex'), 
+      googleOAuth: true,
+    })
+    .save()
   })
 }
 
