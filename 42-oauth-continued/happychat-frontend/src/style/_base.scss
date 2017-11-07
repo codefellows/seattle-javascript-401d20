@@ -1,0 +1,110 @@
+@import 'vars';
+
+html {
+  position: relative;
+  head, script, link {
+    display: none;
+  }
+
+  body { 
+    position: relative; 
+  }
+
+  // style inlines
+  span, em, i { display: inline}
+
+  // style headings
+  h1, h2, h3, h4 {
+    margin: 1.414em 0 0.5em;
+    font-weight: inherit;
+    line-height: 1.2;
+  }
+  h1 {
+    margin-top: 0;
+    font-size: 2.074em;
+  }
+  h2 {font-size: 1.728em;}
+  h3 {font-size: 1.44em;}
+  h4 {font-size: 1.2em;}
+
+  // accents
+  em, i  { font-style: italic; }
+  strong { font-style: bold; }
+
+  // style lists
+  ul, ol {
+    margin: $pad;
+    padding: $pad;
+
+    ul li {
+      list-style: circle;
+      ul li {
+        list-style: disc;
+      }
+      ol li {
+        list-style: decimal;
+      }
+    }
+
+    ol li {
+      list-style: lower-roman;
+      ul li {
+        list-style: disc;
+      }
+      ol li {
+        list-style: decimal;
+      }
+    }
+  }
+
+  li {display: list-item;}
+
+  ul li {
+    list-style: disc;
+  }
+
+  ol li {
+    list-style: decimal;
+  }
+
+  // form 
+  input, textarea {
+    padding: $pad;
+    outline: 1px solid $color-grey;
+    border-radius: $pad / 2;
+
+    &:focus {
+      border: 1px solid $color-primary;
+    }
+  }
+
+  button {
+    padding: $pad;
+    background: $color-primary;
+    border-radius: $pad / 2;
+    &:hover, &:focus {
+      background: $color-primary * 0.8;
+    }
+
+    &:active {
+      background: $color-primary * 0.5;
+    }
+  }
+
+  input[type='submit'] {
+    @extend button;
+  }
+
+  a {
+    color: $color-primary;
+    text-decoration: underline;
+    &:hover, &:focus {
+      background: $color-primary * 0.8;
+    }
+
+    &:active, &:visited {
+      background: $color-primary * 0.5;
+    }
+  }
+
+}
