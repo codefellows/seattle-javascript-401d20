@@ -1,0 +1,16 @@
+1) create Gdeveloper accout
+2) go to API console
+3) create a new app
+4) go to credentials tab
+5) configure the consent screen
+6) create credentials -> Oauth Client ID
+7) choose web application
+   a) set name to your app name
+   b) add "javascript origin" http://localhost:8080 && any frontend deploment url (heroku)
+   b) add "authorized redirect uri" http://localhost:3000/oauth/google && any backend deploment url (heroku)
+8) store the generated client ID and client secret in a .env
+9) goto the dashboard tab
+  -> click enable "APIs and Services"
+10) click on the "Google+ API"
+  -> click enable
+11) party-parrot

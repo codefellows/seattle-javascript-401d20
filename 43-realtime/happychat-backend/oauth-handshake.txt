@@ -1,0 +1,19 @@
+__OAUTH_START__
+
+1) slugclould will redirect to google client with GOOGLE_CLIENT_ID
+
+2) google client will redirect to google auth server 
+
+3) google auth server will redirect to slugcloud backend with a CODE
+
+4) slugcloud backend will redirect to google auth server with CODE, GOOGLE_CLIENT_ID, and and GOOGLE_CLINET_SECRET
+ 
+5) google auth server will send slugcloud backend an access token 
+
+___OAUTH_COMPLETE___
+
+6) slugcloud backend will request to get an open id profile using the access token
+
+7) openid will respond with a profile
+
+8) slugclod backend will find or create an account then generate a token and redirect to the slugcloud frontend
