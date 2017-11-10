@@ -73,7 +73,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   signup: (user) => dispatch(auth.signup(user)),
   login: (user) => dispatch(auth.login(user)),
-  fetchClientProfile: () => dispatch(clientProfile.fetch()),
+  fetchClientProfile: (user) => dispatch(clientProfile.fetch(user)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Landing)
